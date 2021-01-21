@@ -61,6 +61,9 @@ pub extern crate sdl2_sys as sys;
 #[cfg(feature = "gfx")]
 extern crate c_vec;
 
+#[cfg(feature = "serde-serialize")]
+extern crate serde;
+
 pub use crate::sdl::*;
 
 pub mod clipboard;

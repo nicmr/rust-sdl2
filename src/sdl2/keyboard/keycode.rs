@@ -6,7 +6,11 @@ use std::mem::transmute;
 
 use crate::sys;
 
+#[cfg(feature = "serde-serialize")]
+use serde::{Deserialize, Serialize};
+
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 #[repr(i32)]
 pub enum Keycode {
     Backspace = sys::SDLK_BACKSPACE as i32,
